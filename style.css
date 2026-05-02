@@ -9,6 +9,6 @@ body a[data-answerid="-1"] {
     pointer-events: none !important;
 }
 
-.popover {
-    display: none !important;
+[data-original-title="Mastery meter"] {
+    pointer-events: none !important;
 }
