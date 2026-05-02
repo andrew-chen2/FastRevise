@@ -67,7 +67,7 @@ const stopwatchInterval = setInterval(() => {
   }
 }, 100);
 
-// Hide popup and auto re-submit
+// Hide popup and auto resubmit
 const modifySwal = setInterval(() => {
   if (window.Swal && window.Swal.fire) {
     clearInterval(modifySwal);
