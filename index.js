@@ -49,8 +49,17 @@ const stopwatchInterval = setInterval(() => {
         if (!response || response.error !== "Repost") {
           timestamp = Date.now();
         }
+
         // Pass the response to the website normally
         successCb(response);
+
+        // Auto click "Next Question" button
+        if (
+          response.previousAnswerId === response.previousCorrectAnswerId &&
+          response.error !== "Repost"
+        ) {
+          document.getElementById("lnkNext")?.click();
+        }
       };
 
       originalPost.call(this, url, data, token, wrappedSuccessCb, errorCb);
