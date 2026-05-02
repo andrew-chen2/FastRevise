@@ -8,3 +8,7 @@ body a[data-answerid="-1"] {
     opacity: 0.65;
     pointer-events: none !important;
 }
+
+.popover {
+    display: none !important;
+}
