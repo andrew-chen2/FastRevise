@@ -75,7 +75,13 @@ const modifySwal = setInterval(() => {
           `Too fast! Elapsed: ${elapsed}ms. Waiting remaining ${waitTime}ms...`,
         );
 
+        // Disable answer buttons
+        document.body.classList.add("disable-answers");
+
         setTimeout(() => {
+          // Re-enable answer buttons
+          document.body.classList.remove("disable-answers");
+
           if (answerId) {
             const retryBtn = document.querySelector(
               `a[data-answerid="${answerId}"]`,

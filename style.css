@@ -1,0 +1,5 @@
+body.disable-answers .js_answerButton {
+    opacity: 0.5;
+    pointer-events: none !important;
+    cursor: wait !important;
+}
