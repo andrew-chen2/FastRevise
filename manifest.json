@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "FastRevise",
+  "version": "1.0",
+  "description": "Auto hide \"Slow down!\" popup and re-submit answer in SmartRevise quiz.",
+  "content_scripts": [
+    {
+      "matches": ["*://smartrevise.online/*"],
+      "js": ["index.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    }
+  ]
+}
