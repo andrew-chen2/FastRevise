@@ -4,11 +4,11 @@ body.disable-answers .js_answerButton {
     cursor: wait !important;
 }
 
-body a[data-answerid="-1"] {
+html[data-idk-btn="true"] a[data-answerid="-1"] {
     opacity: 0.65;
     pointer-events: none !important;
 }
 
-[data-original-title="Mastery meter"] {
+html[data-mastery-popover="true"] [data-original-title="Mastery meter"] {
     pointer-events: none !important;
 }

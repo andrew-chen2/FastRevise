@@ -55,6 +55,7 @@ const stopwatchInterval = setInterval(() => {
 
         // Auto click "Next Question" button
         if (
+          document.documentElement.dataset.autoContinue !== "false" &&
           response.previousAnswerId === response.previousCorrectAnswerId &&
           response.error !== "Repost"
         ) {
@@ -75,7 +76,11 @@ const modifySwal = setInterval(() => {
     const originalSwal = window.Swal.fire;
 
     window.Swal.fire = function (args) {
-      if (args && args.title === "Slow down!") {
+      if (
+        args &&
+        args.title === "Slow down!" &&
+        document.documentElement.dataset.autoRetry !== "false"
+      ) {
         const elapsed = Date.now() - timestamp;
         let waitTime = COOLDOWN - elapsed;
         waitTime = Math.max(10, waitTime); // In case it goes negative

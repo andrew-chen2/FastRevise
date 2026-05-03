@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                width: 200px;
+                padding: 10px;
+            }
+            div {
+                display: flex;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 style="margin-top: 0">FastRevise Settings</h3>
+        <div>
+            <input type="checkbox" id="autoRetry" />
+            <label for="autoRetry">Auto-retry answer</label>
+        </div>
+        <div>
+            <input type="checkbox" id="autoContinue" />
+            <label for="autoContinue">Auto-continue</label>
+        </div>
+        <div>
+            <input type="checkbox" id="idkBtn" />
+            <label for="idkBtn">Disable "I don't know" button</label>
+        </div>
+        <div>
+            <input type="checkbox" id="masteryPopover" />
+            <label for="masteryPopover">Hide mastery tooltip</label>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>
