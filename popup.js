@@ -3,15 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const autoContinue = document.getElementById("autoContinue");
   const idkBtnToggle = document.getElementById("idkBtn");
   const masteryPopover = document.getElementById("masteryPopover");
+  const keyboardShortcuts = document.getElementById("keyboardShortcuts");
 
   // Load saved settings
   chrome.storage.sync.get(
-    ["autoRetry", "autoContinue", "idkBtn", "masteryPopover"],
+    [
+      "autoRetry",
+      "autoContinue",
+      "idkBtn",
+      "masteryPopover",
+      "keyboardShortcuts",
+    ],
     (result) => {
       autoRetry.checked = result.autoRetry ?? true;
       autoContinue.checked = result.autoContinue ?? true;
       idkBtnToggle.checked = result.idkBtn ?? true;
       masteryPopover.checked = result.masteryPopover ?? true;
+      keyboardShortcuts.checked = result.keyboardShortcuts ?? true;
     },
   );
 

@@ -115,3 +115,30 @@ const modifySwal = setInterval(() => {
     };
   }
 }, 100);
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.repeat ||
+    event.ctrlKey ||
+    event.metaKey ||
+    event.altKey ||
+    ["INPUT", "TEXTAREA"].includes(event.target.tagName) ||
+    document.body.classList.contains("disable-answers")
+  )
+    return;
+
+  if (
+    ["1", "2", "3", "4"].includes(event.key) &&
+    document.documentElement.dataset.keyboardShortcuts !== "false"
+  ) {
+    const buttons = Array.from(
+      document.querySelectorAll(".js_answerButton"),
+    ).filter((btn) => btn.getAttribute("data-answerid") !== "-1");
+
+    const index = parseInt(event.key) - 1;
+
+    if (buttons[index]) {
+      buttons[index].click();
+    }
+  }
+});
