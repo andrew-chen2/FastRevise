@@ -128,6 +128,13 @@ document.addEventListener("keydown", (event) => {
     return;
 
   if (
+    event.key == " " &&
+    document.documentElement.dataset.keyboardShortcuts !== "false"
+  ) {
+    document.getElementById("lnkNext")?.click();
+  }
+
+  if (
     ["1", "2", "3", "4"].includes(event.key) &&
     document.documentElement.dataset.keyboardShortcuts !== "false"
   ) {
